@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,11 +13,9 @@ const App = () => {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
   useEffect(() => {
-    // Check for stored authentication state in localStorage
     const storedAuth = localStorage.getItem('auth');
   
     if (storedAuth === 'true') {
-      // Dispatch an action to set authentication state
       dispatch(setAuthenticated(true));
     }
   }, [dispatch]);
